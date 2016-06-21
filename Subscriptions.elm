@@ -39,5 +39,5 @@ subscriptions model =
         allSubscriptions =
             playerSubscriptions :: gameStateSubscriptions :: gameSubscriptions :: enemySubscriptions
     in
-    Sub.batch
-        allSubscriptions
+        Sub.batch
+            allSubscriptions
