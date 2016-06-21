@@ -3,6 +3,7 @@ module Update exposing (..)
 import Model exposing (Model)
 import Message exposing (Msg(..))
 
+
 import Player.Update
 import Enemy.Update
 import GameState.Update
@@ -19,6 +20,10 @@ update msg model =
                     ( { model | enemies = Enemy.Update.update subMsg model.enemies }, Cmd.none)
                 GameStateMsg subMsg ->
                     ( { model | state = GameState.Update.update subMsg model.state }, Cmd.none)
+                Collision ->
+                    (Model.initialModel, Cmd.map EnemyMsg Enemy.Commands.initializeEnemies)
+                NoOp ->
+                    (model, Cmd.none)
         else
             case msg of
                 GameStateMsg subMsg ->

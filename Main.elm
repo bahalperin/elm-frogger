@@ -26,6 +26,7 @@ view : Model -> Html Msg
 view =
     View.view
 
+-- UPDATE
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update =

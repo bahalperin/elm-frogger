@@ -8,3 +8,5 @@ type Msg =
     PlayerMsg Player.Message.Msg
     | EnemyMsg Enemy.Message.Msg
     | GameStateMsg GameState.Message.Msg
+    | Collision
+    | NoOp
